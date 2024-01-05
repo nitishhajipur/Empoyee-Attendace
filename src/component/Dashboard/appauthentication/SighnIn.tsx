@@ -26,7 +26,7 @@ const navigate=useNavigate()
                 initialValues={{userName:'',password:''}}
                 validationSchema={schema}
                 onSubmit={(values: any) => {
-                    navigate('/dashbord')
+                    navigate('/mainMenu')
 
                 }}>
       {({ errors, values, touched, setFieldValue }) => {
