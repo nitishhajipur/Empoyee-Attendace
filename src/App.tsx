@@ -11,6 +11,7 @@ import './App.css';
 import Calender from './component/Dashboard/Calender';
 import Employee from './component/Dashboard/Employee';
 import Project from './component/Dashboard/Project';
+import Timesheet from './component/Dashboard/Timesheet';
 
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
           <Route path='/calender' element={<Calender />} />
           <Route path='/project' element={<Project />} />
           <Route path='/employee' element={<Employee />} />
-
+          <Route path='/timesheet' element={<Timesheet />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
