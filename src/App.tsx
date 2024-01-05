@@ -11,6 +11,7 @@ import './App.css';
 import Calender from './component/Dashboard/Calender';
 import Employee from './component/Dashboard/Employee';
 import Project from './component/Dashboard/Project';
+import SighnIn from './component/Dashboard/appauthentication/SighnIn';
 import Timesheet from './component/Dashboard/Timesheet';
 
 
@@ -18,12 +19,13 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="/" element={<SighnIn />}/>
+        <Route path="/mainMenu" element={<Layout />}>
           <Route index element={<Dashboard />} />
-          <Route path='/calender' element={<Calender />} />
-          <Route path='/project' element={<Project />} />
-          <Route path='/employee' element={<Employee />} />
-          <Route path='/timesheet' element={<Timesheet />} />
+          <Route path='/mainMenu/calender' element={<Calender />} />
+          <Route path='/mainMenu/project' element={<Project />} />
+          <Route path='/mainMenu/employee' element={<Employee />} />
+          <Route path='/mainMenu/timesheet' element={<Timesheet />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>

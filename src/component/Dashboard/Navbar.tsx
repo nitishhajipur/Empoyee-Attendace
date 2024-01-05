@@ -12,23 +12,23 @@ const Layout = () => {
             <nav className="col-2">
                 <div className="nav-container">
                     <h6 className="mb-5 pt-3 ps-2">Employee management</h6>
-                    <div className={pathname == '/' ? 'selected-nav' : 'nav-item'}>
-                        <NavLink to="/" className='nav-link'>Home</NavLink>
+                    <div className={pathname == '/mainMenu' ? 'selected-nav' : 'nav-item'}>
+                        <NavLink to="/mainMenu" className='nav-link'>Home</NavLink>
                     </div>
-                    <div className={pathname == '/timesheet' ? 'selected-nav' : 'nav-item'}>
-                        <NavLink to="/timesheet" className='nav-link'>Timesheet</NavLink>
+                    <div className={pathname == '/mainMenu/timesheet' ? 'selected-nav' : 'nav-item'}>
+                        <NavLink to="/mainMenu/timesheet" className='nav-link'>Timesheet</NavLink>
                     </div>
-                    <div className={pathname == '/calender' ? 'selected-nav' : 'nav-item'}>
-                        <NavLink to="/calender" className='nav-link'>Calender</NavLink>
+                    <div className={pathname == '/mainMenu/calender' ? 'selected-nav' : 'nav-item'}>
+                        <NavLink to="/mainMenu/calender" className='nav-link'>Calender</NavLink>
                     </div>
-                    <div className={pathname == '/project' ? 'selected-nav' : 'nav-item'}>
-                        <NavLink to="/project" className='nav-link'>Payslip</NavLink>
+                    <div className={pathname == '/mainMenu/project' ? 'selected-nav' : 'nav-item'}>
+                        <NavLink to="/mainMenu/project" className='nav-link'>Payslip</NavLink>
                     </div>
-                    <div className={pathname == '/employee' ? 'selected-nav' : 'nav-item'}>
-                        <NavLink to="/employee" className='nav-link'>Holidays</NavLink>
+                    <div className={pathname == '/mainMenu/employee' ? 'selected-nav' : 'nav-item'}>
+                        <NavLink to="/mainMenu/employee" className='nav-link'>Holidays</NavLink>
                     </div>
-                    <div className={pathname == '/leavesBenifits' ? 'selected-nav' : 'nav-item'}>
-                        <NavLink to="/leavesBenifits" className='nav-link'>Leaves & Benifits</NavLink>
+                    <div className={pathname == '/mainMenu/leavesBenifits' ? 'selected-nav' : 'nav-item'}>
+                        <NavLink to="mainMenu/leavesBenifits" className='nav-link'>Leaves & Benifits</NavLink>
                     </div>
                 </div>
             </nav>
