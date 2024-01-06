@@ -1,6 +1,6 @@
 .App-container {
   background-color: rgb(13, 13, 13);
-  color: red;
+  color: white;
   height: 100vh;
 }
 .nav-container{
@@ -63,7 +63,5 @@
   font-size: 9px;
 }
 .timeSheet{
-  input:focus{
-    outline: none !important;
-}
+  
 }
