@@ -56,3 +56,26 @@ input[type=number]::-webkit-outer-spin-button {
     appearance: none;
     margin: 0; 
 }
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+} 
+element.style {
+}
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+input {
+    font-size: 14px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 4px 4px;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}

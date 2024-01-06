@@ -52,7 +52,7 @@ export default function Timesheet() {
             <td>
               <input
                 name="date"
-                // value={data.date}
+                value={date}
                 type="date"
                 // onChange={(e) => onChangeInput(e, employeeId)}
                 // placeholder="Type Name"
@@ -60,81 +60,81 @@ export default function Timesheet() {
             </td>
             <td>
               <input
-                name="email"
-                // value={data.finishTime}
-                type="number"
+                name="startTime"
+                value={startTime}
+                type="text"
                 // onChange={(e) => onChangeInput(e, employeeId)}
                 // placeholder="Type Email"
               />
             </td>
             <td>
               <input
-                name="position"
-                type="number"
-                // value={position}
+                name="finishTime"
+                type="text"
+                value={finishTime}
                 // onChange={(e) => onChangeInput(e, employeeId)}
                 // placeholder="Type Position"
               />
             </td>
             <td>
               <input
-                name="position"
-                type="number"
-                // value={position}
+                name="regularHrs"
+                type="text"
+                value={regularHours}
                 // onChange={(e) => onChangeInput(e, employeeId)}
                 // placeholder="Type Position"
               />
             </td>
             <td>
               <input
-                name="position"
-                type="number"
-                // value={position}
+                name="overTime"
+                type="text"
+                value={overtime}
                 // onChange={(e) => onChangeInput(e, employeeId)}
                 // placeholder="Type Position"
               />
             </td>
             <td>
               <input
-                name="position"
-                type="number"
-                // value={position}
+                name="sick"
+                type="text"
+                value={sick}
                 // onChange={(e) => onChangeInput(e, employeeId)}
                 // placeholder="Type Position"
               />
             </td>
             <td>
               <input
-                name="position"
-                type="number"
-                // value={position}
+                name="Vacation"
+                type="text"
+                value={vacation}
                 // onChange={(e) => onChangeInput(e, employeeId)}
                 // placeholder="Type Position"
               />
             </td>
             <td>
               <input
-                name="position"
-                type="number"
-                // value={position}
+                name="holiday"
+                type="text"
+                value={holiday}
                 // onChange={(e) => onChangeInput(e, employeeId)}
                 // placeholder="Type Position"
               />
             </td>
             <td>
               <input
-                name="position"
-                type="number"
-                // value={position}
+                name="otherHrs"
+                type="text"
+                value={otherhrs}
                 // onChange={(e) => onChangeInput(e, employeeId)}
                 // placeholder="Type Position"
               />
             </td>
             <td>
               <input
-                name="position"
-                type="number"
-                // value={position}
+                name="totalHrs"
+                type="text"
+                value={totalhrs}
                 // onChange={(e) => onChangeInput(e, employeeId)}
                 // placeholder="Type Position"
               />
