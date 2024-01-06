@@ -50,9 +50,9 @@ const navigate=useNavigate()
             <Field type='password' className='form-control' name='password' placeholder='password' value={values.password}/>
             {errors?.password && touched?.password? <div className='text-danger'><ErrorMessage name='password'/></div>:""}
             </div>
-        <div>
+        <div className='d-flex justify-content-center'>
         <button type='submit' className='login'> Sighn In</button>
-        <button type='button' className='sighnUp'> Sighn Up</button>
+        {/* <button type='button' className='sighnUp'> Sighn Up</button> */}
 
         </div>
 
