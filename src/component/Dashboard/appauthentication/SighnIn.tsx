@@ -51,8 +51,8 @@ const navigate=useNavigate()
             {errors?.password && touched?.password? <div className='text-danger'><ErrorMessage name='password'/></div>:""}
             </div>
         <div>
-        <button type='submit' className='login'> Sighn In</button>
-        <button type='button' className='sighnUp'> Sighn Up</button>
+        <button type='submit' className='login'> Sign in</button>
+        <button type='button' className='sighnUp'> Sign up</button>
 
         </div>
 

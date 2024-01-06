@@ -1,10 +1,11 @@
 import React from 'react'
+import Overview from './Overview'
 
 function Dashboard() {
     return (
         <div className='bg-secodary'>
             <h3 className='text-light'>Good morning Akshay...</h3>
-            <div className='container-fluid row gap-4 mt-4'>
+            <div className='row gap-4 mt-4'>
                 <div className='col-2'>
                     <div className='m-2 hour-card'>
                         <span className='h-name'>
@@ -40,6 +41,10 @@ function Dashboard() {
                 <div className='col-5 m-2 cards'>
 
                 </div>
+            </div>
+            <div className='row'>
+
+                <Overview />
             </div>
         </div>
     )

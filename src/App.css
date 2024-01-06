@@ -1,14 +1,18 @@
 .App-container {
   background-color: rgb(13, 13, 13);
   color: white;
-  height: 100vh;
+  overflow: none;
 }
 .nav-container{
+  position: fixed;
+  top: 0px;
+  left: 0;
   display: block;
   min-width: 10rem;
   padding-right: 2rem;
   /* border-right: 1px solid rgb(75, 89, 89); */
-  height: 100vh;
+  height: 100%;
+
   /* box-shadow: 0px 0px 2px white; */
 }
 .nav-item{
@@ -37,6 +41,7 @@
 }
 .body-container{
   background-color: #171616;
+  /* overflow: scroll; */
 }
 .cards  {
   height:16em;
