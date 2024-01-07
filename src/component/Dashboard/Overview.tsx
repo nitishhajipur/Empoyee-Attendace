@@ -76,7 +76,7 @@ function Overview() {
     ]
     const [weekData, setWeekData] = React.useState<any>([]);
     let weekday: any = []
-    const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednusday', 'Thursday', 'Friday', 'Saturday']
+    // const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednusday', 'Thursday', 'Friday', 'Saturday']
     useEffect(() => {
         const today = new Date();
         let _day: any = today.getDay();
@@ -88,11 +88,7 @@ function Overview() {
             _day = _day + 6
         }
         for (var i = _day + 1; i >= 0; i--) {
-            console.log(weekdays[i])
-            //
-            // firstDay = new Date(
-            //     today.setDate(today.getDate() - today.getDay()),
-            // );
+            
             lastDay = new Date(
                 today.setDate(today.getDate() - today.getDay() + i),
             );
