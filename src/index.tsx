@@ -4,8 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/js/bootstrap.bundle.min";
 
-
+// import "../node_modules/primereact/resources/themes/saga-blue/theme.css";
+// import '../node_modules/primereact/resources/themes/lara-light-indigo/theme.css';
+import '../node_modules/primereact/resources/primereact.css'
+import "../node_modules/primereact/resources/themes/vela-blue/theme.css";
+// import "../node_modules/primeicons/primeicons.css";
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );

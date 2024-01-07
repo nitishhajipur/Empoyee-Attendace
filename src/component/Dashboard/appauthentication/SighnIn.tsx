@@ -26,7 +26,7 @@ const navigate=useNavigate()
                 initialValues={{userName:'',password:''}}
                 validationSchema={schema}
                 onSubmit={(values: any) => {
-                    navigate('/mainMenu')
+                    navigate('/home')
 
                 }}>
       {({ errors, values, touched, setFieldValue }) => {
@@ -50,9 +50,9 @@ const navigate=useNavigate()
             <Field type='password' className='form-control' name='password' placeholder='password' value={values.password}/>
             {errors?.password && touched?.password? <div className='text-danger'><ErrorMessage name='password'/></div>:""}
             </div>
-        <div className='d-flex justify-content-center'>
-        <button type='submit' className='login'> Sighn In</button>
-        {/* <button type='button' className='sighnUp'> Sighn Up</button> */}
+        <div>
+        <button type='submit' className='login'> Sign in</button>
+        <button type='button' className='sighnUp'> Sign up</button>
 
         </div>
 
