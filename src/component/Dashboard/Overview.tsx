@@ -83,16 +83,16 @@ function Overview() {
         // const _date = date.getDate();
         const _data = [...[], ...data]
         let lastDay: any;
-        let firstDay: any;
+        // let firstDay: any;
         if (_day === 0) {
             _day = _day + 6
         }
         for (var i = _day + 1; i >= 0; i--) {
             console.log(weekdays[i])
             //
-            firstDay = new Date(
-                today.setDate(today.getDate() - today.getDay()),
-            );
+            // firstDay = new Date(
+            //     today.setDate(today.getDate() - today.getDay()),
+            // );
             lastDay = new Date(
                 today.setDate(today.getDate() - today.getDay() + i),
             );
