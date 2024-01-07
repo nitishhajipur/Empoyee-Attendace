@@ -59,6 +59,9 @@
 import React, { useEffect } from 'react'
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
+import EditNoteIcon from '@mui/icons-material/EditNote';
+import IconButton from '@mui/material/IconButton';
+import Tooltip from '@mui/material/Tooltip';
 
 function Overview() {
     const data: any = [
@@ -69,31 +72,46 @@ function Overview() {
         { id: 5, startTime: '9:00', endTime: '6:00', effectiveHour: '8hr', grossHour: '9hr' },
         { id: 6, startTime: '9:00', endTime: '6:00', effectiveHour: '8hr', grossHour: '9hr' },
         { id: 7, startTime: '9:00', endTime: '6:00', effectiveHour: '8hr', grossHour: '9hr' },
+        
     ]
     const [weekData, setWeekData] = React.useState<any>([]);
-    let weekday:any = []
+    let weekday: any = []
     const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednusday', 'Thursday', 'Friday', 'Saturday']
     useEffect(() => {
         const today = new Date();
-        const _day: any = today.getDay();
+        let _day: any = today.getDay();
         // const _date = date.getDate();
         const _data = [...[], ...data]
         let lastDay: any;
-       
-        for (var i = _day; i >= 0; i--) {
+        let firstDay: any;
+        if (_day === 0) {
+            _day = _day + 6
+        }
+        for (var i = _day + 1; i >= 0; i--) {
             console.log(weekdays[i])
-            //     
+            //
+            firstDay = new Date(
+                today.setDate(today.getDate() - today.getDay()),
+            );
             lastDay = new Date(
                 today.setDate(today.getDate() - today.getDay() + i),
             );
             weekday.push(lastDay)
+            console.log('78...', today.getDay())
         }
-        console.log('78...', weekday)
         _data.map((item, index) => {
-            item.date = weekday[index]?.toString().slice(0,15)
+            item.date = weekday[index]?.toString().slice(0, 15)
         })
         setWeekData([...weekData, ..._data])
-    }, [])
+    }, []);
+
+    const actionBodyTemplate = (row: any) => {
+        return <Tooltip title="Regularize">
+            <IconButton>
+                <EditNoteIcon sx={{ color: '#ffffff' }} />
+            </IconButton>
+        </Tooltip>
+    }
     return (
         <div>
             <div className='d-flex justify-content-between'>
@@ -107,7 +125,7 @@ function Overview() {
                 <Column field="endTime" header="End time"></Column>
                 <Column field="effectiveHour" header="Effective hour"></Column>
                 <Column field="grossHour" header="Gross hour"></Column>
-                <Column field="action" header="Action"></Column>
+                <Column body={actionBodyTemplate} header="Action"></Column>
 
             </DataTable>
         </div>
