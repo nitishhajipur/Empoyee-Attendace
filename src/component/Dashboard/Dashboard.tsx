@@ -1,12 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Overview from './Overview'
 
+import Divider from '@mui/material/Divider';
+import Actions from './Actions';
+
+
 function Dashboard() {
+
     return (
         <div className='bg-secodary'>
             <h3 className='text-light'>Good morning Akshay...</h3>
-            <div className='row gap-4 mt-4'>
-                <div className='col-2'>
+            <div className='row gap-4 mt-4 flex-nowrap'>
+                <div className='col-3'>
                     <div className='m-2 hour-card'>
                         <span className='h-name'>
                             Regular
@@ -36,14 +41,16 @@ function Dashboard() {
                     </div>
                 </div>
                 <div className='col-4 m-2 cards'>
-
+                    <h6 className='p-2 h-name'>Weekly Earnings</h6>
+                    <Divider color="primary" />
                 </div>
-                <div className='col-5 m-2 cards'>
-
+                <div className='col-4 m-2 cards'>
+                    <h6 className='p-2 h-name'>Actions</h6>
+                    <Divider color="primary" />
+                    <Actions />
                 </div>
             </div>
             <div className='row mt-3'>
-
                 <Overview />
             </div>
         </div>

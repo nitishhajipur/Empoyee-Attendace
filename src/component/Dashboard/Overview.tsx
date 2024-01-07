@@ -65,14 +65,14 @@ import Tooltip from '@mui/material/Tooltip';
 
 function Overview() {
     const data: any = [
-        { id: 1, startTime: '9:00', endTime: '6:00', effectiveHour: '8hr', grossHour: '9hr' },
-        { id: 2, startTime: '9:00', endTime: '6:00', effectiveHour: '8hr', grossHour: '9hr' },
-        { id: 3, startTime: '9:00', endTime: '6:00', effectiveHour: '8hr', grossHour: '9hr' },
-        { id: 4, startTime: '9:00', endTime: '6:00', effectiveHour: '8hr', grossHour: '9hr' },
-        { id: 5, startTime: '9:00', endTime: '6:00', effectiveHour: '8hr', grossHour: '9hr' },
-        { id: 6, startTime: '9:00', endTime: '6:00', effectiveHour: '8hr', grossHour: '9hr' },
-        { id: 7, startTime: '9:00', endTime: '6:00', effectiveHour: '8hr', grossHour: '9hr' },
-        
+        { id: 1, startTime: '9:00', endTime: '6:00', effectiveHour: '8hr', grossHour: '9hr', overTime: '2hr' },
+        { id: 2, startTime: '9:00', endTime: '6:00', effectiveHour: '8hr', grossHour: '9hr', overTime: '1hr' },
+        { id: 3, startTime: '9:00', endTime: '20:00', effectiveHour: '8hr', grossHour: '9hr', overTime: '5hr' },
+        { id: 4, startTime: '9:00', endTime: '6:00', effectiveHour: '8hr', grossHour: '9hr', overTime: '1hr' },
+        { id: 5, startTime: '9:00', endTime: '6:00', effectiveHour: '8hr', grossHour: '9hr', overTime: '3hr' },
+        { id: 6, startTime: '9:00', endTime: '6:00', effectiveHour: '8hr', grossHour: '9hr', overTime: '4hr' },
+        { id: 7, startTime: '9:00', endTime: '6:00', effectiveHour: '8hr', grossHour: '9hr', overTime: '1hr' },
+
     ]
     const [weekData, setWeekData] = React.useState<any>([]);
     let weekday: any = []
@@ -88,7 +88,7 @@ function Overview() {
             _day = _day + 6
         }
         for (var i = _day + 1; i >= 0; i--) {
-            
+
             lastDay = new Date(
                 today.setDate(today.getDate() - today.getDay() + i),
             );
@@ -121,6 +121,7 @@ function Overview() {
                 <Column field="endTime" header="End time"></Column>
                 <Column field="effectiveHour" header="Effective hour"></Column>
                 <Column field="grossHour" header="Gross hour"></Column>
+                <Column field="overTime" header="Over time"></Column>
                 <Column body={actionBodyTemplate} header="Action"></Column>
 
             </DataTable>

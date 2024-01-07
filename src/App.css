@@ -11,10 +11,13 @@
   top: 0px;
   left: 0;
   display: block;
-  min-width: 10rem;
+  min-width: 12em;
+  max-width: 10em;
   padding-right: 2rem;
+  background-color: rgb(13, 13, 13);
   /* border-right: 1px solid rgb(75, 89, 89); */
   height: 100%;
+  z-index: 99;
 
   /* box-shadow: 0px 0px 2px white; */
 }
@@ -71,6 +74,31 @@
 .growth {
   font-size: 9px;
 }
-.timeSheet{
-  
+
+.action-left-container{
+  /* padding: 1em; */
+  margin-top: 1em !important;
+  border-right: 1px solid rgb(58, 57, 57);
+  height: 100%;
+}
+.action-right-container{
+  margin: 2em !important;
+  /* border-right: 1px solid rgb(58, 57, 57); */
+  height: 100%;
+}
+.hour{
+  font-size: 3.5em;
+  font-weight: 500;
+}
+.minute{
+  font-size: 3.5em;
+  font-weight: 500;
+}
+.second{
+  font-size: 22px;
+  font-weight: 500;
+}
+.am-pm{
+  font-size: 12px;
+  font-weight: 400;
 }
