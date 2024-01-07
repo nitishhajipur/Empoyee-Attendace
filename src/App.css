@@ -1,7 +1,10 @@
 .App-container {
   background-color: rgb(13, 13, 13);
   color: white;
-  overflow: none;
+  overflow-y:hidden;
+  height: 100%;
+  background-size: cover;
+  background-repeat: repeat;
 }
 .nav-container{
   position: fixed;
@@ -41,7 +44,8 @@
 }
 .body-container{
   background-color: #171616;
-  /* overflow: scroll; */
+  height: 100vh;
+  overflow-y: scroll
 }
 .cards  {
   height:16em;
@@ -67,4 +71,6 @@
 .growth {
   font-size: 9px;
 }
-
+.timeSheet{
+  
+}
