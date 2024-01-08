@@ -3,6 +3,7 @@ import Overview from './Overview'
 
 import Divider from '@mui/material/Divider';
 import Actions from './Actions';
+import Earning from './Earning';
 
 
 function Dashboard() {
@@ -43,6 +44,7 @@ function Dashboard() {
                 <div className='col-4 m-2 cards'>
                     <h6 className='p-2 h-name'>Weekly Earnings</h6>
                     <Divider color="primary" />
+                    <Earning/>
                 </div>
                 <div className='col-4 m-2 cards'>
                     <h6 className='p-2 h-name'>Actions</h6>

@@ -112,7 +112,7 @@ function Overview() {
         <div>
             <div className='d-flex justify-content-between'>
                 <h6 className='m-2'>Weekly report</h6>
-                <button className='btn btn-outline-primary'>Approval status</button>
+                <button className='btn btn-outline-primary me-4'>Approval status</button>
             </div>
             <hr />
             <DataTable value={weekData} tableStyle={{ minWidth: '50rem' }}>
