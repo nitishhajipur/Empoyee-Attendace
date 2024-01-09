@@ -5,12 +5,9 @@ import { Column } from 'primereact/column';
 import EditNoteIcon from '@mui/icons-material/EditNote';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
-import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { TimePicker } from '@mui/x-date-pickers/TimePicker';
+import './timesheet.css';
 
-function Overview() {
+function TimeSheet() {
   const data: any = [
     { id: 1, startTime: '9:00', endTime: '6:00', effectiveHour: '8hr', grossHour: '9hr', overTime: '2hr' },
     { id: 2, startTime: '9:00', endTime: '6:00', effectiveHour: '8hr', grossHour: '9hr', overTime: '1hr' },
@@ -56,70 +53,54 @@ function Overview() {
     </Tooltip>
   }
   const startTimeTemplate = () => {
-    return <div>
-      <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <DemoContainer components={['TimePicker']}>
-          <TimePicker label="Basic time picker" />
-        </DemoContainer>
-      </LocalizationProvider>
+    return <div style={{width:'1rem !important'}}>
+      <input type="time" className='form-control' />
     </div>
   }
   const endTimeTemplate = () => {
     return <div>
-      <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <DemoContainer components={['TimePicker']}>
-          <TimePicker label="Basic time picker" />
-        </DemoContainer>
-      </LocalizationProvider>
+      <input type="time" className='form-control' />
     </div>
   }
   const effectiveTimeTemplate = () => {
     return <div>
-      <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <DemoContainer components={['TimePicker']}>
-          <TimePicker label="Basic time picker" />
-        </DemoContainer>
-      </LocalizationProvider>
+      <input type="time" className='form-control' />
     </div>
   }
   const grossTimeTemplate = () => {
     return <div>
-      <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <DemoContainer components={['TimePicker']}>
-          <TimePicker label="Basic time picker" />
-        </DemoContainer>
-      </LocalizationProvider>
+      <input type="time" className='form-control' />
     </div>
   }
   const overTimeTemplate = () => {
     return <div>
-      <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <DemoContainer components={['TimePicker']}>
-          <TimePicker label="Basic time picker" />
-        </DemoContainer>
-      </LocalizationProvider>
+      <input type="time" className='form-control' />
     </div>
   }
+
+const size = '30em'
 
   return (
     <div>
       <div className='d-flex justify-content-between'>
         <h6 className='m-2'>Weekly report</h6>
-        <button className='btn btn-outline-primary me-4'>Approval status</button>
       </div>
-      <hr />
+      {/* <hr /> */}
       <DataTable value={weekData} tableStyle={{ minWidth: '50rem' }}>
-        <Column field='date' header="Date" frozen alignFrozen="right"></Column>
-        <Column body={startTimeTemplate} header="Start time"></Column>
-        <Column body={endTimeTemplate} header="End time"></Column>
-        <Column body={effectiveTimeTemplate} header="Effective hour"></Column>
-        <Column body={grossTimeTemplate} header="Gross hour"></Column>
-        <Column body={overTimeTemplate} header="Over time"></Column>
+        <Column field='date' header="Date" frozen alignFrozen="right" ></Column>
+        <Column body={startTimeTemplate} header="Start time" ></Column>
+        <Column body={endTimeTemplate} header="End time" ></Column>
+        <Column body={effectiveTimeTemplate} header="Effective hour" ></Column>
+        <Column body={grossTimeTemplate} header="Gross hour" ></Column>
+        <Column body={overTimeTemplate} header="Over time" ></Column>
         {/* <Column body={actionBodyTemplate} header="Action"></Column> */}
-
       </DataTable>
+      <div className='m-2 d-flex justify-content-end'>
+        <button className='btn btn-outline-primary'>Save</button>
+        <button className='btn btn-success ms-2'>Submit</button>
+      </div>
     </div>
   )
 }
 
-export default Overview
+export default TimeSheet

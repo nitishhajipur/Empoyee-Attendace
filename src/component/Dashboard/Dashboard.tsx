@@ -10,7 +10,7 @@ function Dashboard() {
 
     return (
         <div className='bg-secodary'>
-            <h3 className='text-light'>Good morning Akshay...</h3>
+            <h3 className='text-dark'>Good morning Akshay...</h3>
             <div className='row gap-4 mt-4 flex-nowrap'>
                 <div className='col-3'>
                     <div className='m-2 hour-card'>
