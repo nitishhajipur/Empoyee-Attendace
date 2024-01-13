@@ -1,6 +1,6 @@
 .App-container {
-  background-color: rgb(13, 13, 13);
-  color: white;
+  /* background-color: #ffffff; */
+  color: #000000;
   overflow-y:hidden;
   height: 100%;
   background-size: cover;
@@ -14,12 +14,12 @@
   min-width: 12em;
   max-width: 10em;
   padding-right: 2rem;
-  background-color: rgb(13, 13, 13);
+  /* background-color: #ffffff; */
   /* border-right: 1px solid rgb(75, 89, 89); */
   height: 100%;
   z-index: 99;
 
-  /* box-shadow: 0px 0px 2px white; */
+  box-shadow: 0px 0px 10px black;
 }
 .nav-item{
   width: 100% !important;
@@ -28,41 +28,43 @@
 }
 .nav-link{
   text-decoration: none;
-  background-color: rgb(13, 13, 13);
+  /* background-color: rgb(185, 173, 173); */
   color: white;
   font-size: 1em;
 }
 .selected-nav{
   /* background-color: lightcyan; */
   padding: 1em;
-  color: lightcyan;
+  color: lightcoral;
   border-bottom: 1px solid lightcoral;
   margin-left: 1em;
 }
 .nav-item:hover{
-  background-color: lightgray;
-  color: black;
+  background-color: rgb(235, 235, 235);
+  /* color: lightblue; */
   border-top-right-radius: 26px;
   border-bottom-left-radius: 26px;
 }
 .body-container{
-  background-color: #171616;
+  background-color: rgb(255, 255, 255);
   height: 100vh;
   overflow-y: scroll
 }
 .cards  {
   height:16em;
-  background-color: rgb(13, 13, 13);
-  border: 1px solid rgb(53, 51, 51);
+  background-color: white;
+  /* border: 1px solid rgb(53, 51, 51); */
   border-radius: 12px;
+  box-shadow: 0px 0px 9px #706f6f;
   /* box-shadow: 0px 0px 3px lightgrey; */
 }
 .hour-card{
   height:5em;
-  background-color: rgb(13, 13, 13);
-  border: 1px solid rgb(53, 51, 51);
+  background-color: #ffffff;
+  /* border: 1px solid rgb(53, 51, 51); */
   padding-left: 15px;
   border-radius: 12px;
+  box-shadow: 0px 0px 9px #706f6f;
 
 }
 .h-name{
@@ -102,3 +104,22 @@
   font-size: 12px;
   font-weight: 400;
 }
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+tr th {
+  font-size: 14px;
+  padding: 12px;
+  border-bottom: 1px solid rgb(182, 182, 182);
+  text-align: left;
+  /* background-color: rgba(217,timeSheet 221, 146, 0.2); */
+}
+
+tr td {
+  border-bottom: 1px solid #b8b6b6;
+  text-align: left;
+  align-content: center;
+}
+

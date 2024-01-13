@@ -104,7 +104,7 @@ function Overview() {
     const actionBodyTemplate = (row: any) => {
         return <Tooltip title="Regularize">
             <IconButton>
-                <EditNoteIcon sx={{ color: '#ffffff' }} />
+                <EditNoteIcon />
             </IconButton>
         </Tooltip>
     }
