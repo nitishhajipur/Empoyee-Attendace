@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap/dist/js/bootstrap.bundle.min";
-
+import './index.scss'
 // import "../node_modules/primereact/resources/themes/saga-blue/theme.css";
 import '../node_modules/primereact/resources/themes/lara-light-indigo/theme.css';
 import '../node_modules/primereact/resources/primereact.css'
