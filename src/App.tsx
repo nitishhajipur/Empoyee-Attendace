@@ -7,7 +7,7 @@ import AppNavbar from './component/Dashboard/Navbar';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import NoPage from './component/Dashboard/NoPage';
 import Layout from './component/Dashboard/Navbar';
-import './App.css';
+import './App.scss';
 import Calender from './component/Dashboard/Calender';
 import Employee from './component/Dashboard/Employee';
 import Project from './component/Dashboard/Project';
