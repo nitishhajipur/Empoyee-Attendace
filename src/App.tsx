@@ -13,11 +13,13 @@ import Employee from './component/Dashboard/Employee';
 import Project from './component/Dashboard/Project';
 import Timesheet from './component/Dashboard/Timesheet';
 import SighnIn from './component/Dashboard/appauthentication/SighnIn';
+import { ToastContainer, toast } from 'react-toastify';
 
 
 function App() {
   return (
     <BrowserRouter>
+      <ToastContainer />
       <Routes>
         <Route index element={<SighnIn />} />
         <Route path="/" element={<Layout />}>

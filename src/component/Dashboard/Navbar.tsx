@@ -1,5 +1,9 @@
 
-import { Outlet, Link, useNavigate, NavLink, useLocation } from "react-router-dom";
+import { Outlet, Link, useNavigate, NavLink, useLocation, useOutletContext } from "react-router-dom";
+import Header from "./Header";
+import React, { useState } from "react";
+import { FetchData } from "../../config/fetch";
+// import { useOutletContext } from "react-router-dom"
 
 
 const Layout = () => {
@@ -7,6 +11,15 @@ const Layout = () => {
 
     const { pathname }: any = location;
     console.log(pathname)
+    const [userData, setUserData] = useState<any>({})
+
+    React.useEffect(() => {
+        const payload = { url: `http://localhost:3006/api/findUserById/${sessionStorage.id}`, method: 'GET', data: '' }
+        FetchData(payload).then((response: any) => {
+            console.log(response.data)
+            setUserData(response.data)
+        })
+    },[])
     return (
         <div className="row App-container">
             <nav className="col-2">
@@ -17,7 +30,7 @@ const Layout = () => {
                     </div>
                     <div className={pathname == '/timesheet' ? 'selected-nav' : 'nav-item'}>
                         <NavLink to="/timesheet" className='nav-link'>Timesheet</NavLink>
-                    </div>  
+                    </div>
                     <div className={pathname == '/calender' ? 'selected-nav' : 'nav-item'}>
                         <NavLink to="/calender" className='nav-link'>Calender</NavLink>
                     </div>
@@ -33,7 +46,8 @@ const Layout = () => {
                 </div>
             </nav>
             <div className="col-10 container-fluid p-2 body-container">
-                <Outlet />
+                <Header userData={userData}/>
+                <Outlet context={[userData]} />
             </div>
         </div>
     )

@@ -3,11 +3,14 @@ import { ToastContainer, toast } from 'react-toastify';
 import AttendanceAction from './AttendanceAction'
 import moment from 'moment'
 import 'react-toastify/dist/ReactToastify.css';
+import { useOutletContext } from "react-router-dom";
 
 function Actions() {
     const [issLoggedIn, setIssLoggedIn] = useState(false)
     const [toastMsg, setToastMsg] = useState('Login successful');
     const [dailyLogs, setDailyLogs] = useState<any>([])
+    const [userData]: any = useOutletContext();
+    
 
     const handleClockIn = () => {
         issLoggedIn ? setIssLoggedIn(false) : setIssLoggedIn(true)
@@ -40,7 +43,7 @@ function Actions() {
                                 <div className='text-secondary'>
                                     Shift: General
                                 </div>
-                                <span>9:00am to 5:00pm</span>
+                                <span>{userData.shift}</span>
                             </div>
                             <div className='mt-2'>End time: {dailyLogs?.length > 1 ? dailyLogs[dailyLogs.length - 1] : '--:--'}</div>
                             <ToastContainer />

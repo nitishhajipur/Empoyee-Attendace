@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon';
+import { useOutletContext } from "react-router-dom";
 
 function Earning() {
     const date = new Date()
+    const [userData]: any = useOutletContext();
     const [workingDetails, setWorkingDetails] = useState<any>({
-        effective: 20,
+        effective: 20 ,
         gross: 39,
         overTime: 6,
         hourlyRate: 40,
@@ -39,13 +41,13 @@ function Earning() {
                         <div className='mt-2'>:</div>
                     </div>
                     <div className='col-5'>
-                        <h5>{workingDetails.hourlyRate}$</h5>
+                        <h5>{userData.hourlyPay}$</h5>
                         <span className='text-warning'>{workingDetails.effective} hr</span>
                         <div className='text-success mt-2'>{workingDetails.gross} hr</div>
                         <div className='text-success'>
                             {workingDetails.overTime} hr
                             {workingDetails.overTime > 5 &&
-                                <InsertEmoticonIcon sx={{ color: '#a1ad1a', mb: '1px', ml: '5px',fontSize:'15px' }} />
+                                <InsertEmoticonIcon sx={{ color: '#a1ad1a', mb: '1px', ml: '5px', fontSize: '15px' }} />
                             }
                         </div>
                         <span className='mt-2'> {workingDetails.weekStart} to {workingDetails.weekEnd}</span>
