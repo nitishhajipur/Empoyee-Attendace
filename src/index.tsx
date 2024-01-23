@@ -11,6 +11,9 @@ import '../node_modules/primereact/resources/themes/lara-light-indigo/theme.css'
 import '../node_modules/primereact/resources/primereact.css'
 // import "../node_modules/primereact/resources/themes/vela-blue/theme.css";
 // import "../node_modules/primeicons/primeicons.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-toastify/dist/ReactToastify.css';
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
