@@ -3,14 +3,15 @@ import { ToastContainer, toast } from 'react-toastify';
 import AttendanceAction from './AttendanceAction'
 import moment from 'moment'
 import 'react-toastify/dist/ReactToastify.css';
-import { useOutletContext } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 
 function Actions() {
     const [issLoggedIn, setIssLoggedIn] = useState(false)
     const [toastMsg, setToastMsg] = useState('Login successful');
     const [dailyLogs, setDailyLogs] = useState<any>([])
     const [userData]: any = useOutletContext();
-    
+    const navigate = useNavigate()
+
 
     const handleClockIn = () => {
         issLoggedIn ? setIssLoggedIn(false) : setIssLoggedIn(true)
@@ -22,14 +23,23 @@ function Actions() {
         console.log('18....', dailyLogs)
 
     }
-  return (
-    <div>
-         <div className='row flex-nowrap'>
-                        <div className='col-6 action-left-container'>
-                            <AttendanceAction />
-                            <div className='mt-3'>Start time: {dailyLogs?.length > 0 ? dailyLogs[0] : '--:--'}</div>
-                        </div>
-                        <div className='col-6 action-right-container'>
+    const handleNavigate = ()=>{
+        navigate('/timesheet')
+    }
+    return (
+        <div>
+            <div className='row flex-nowrap'>
+                <div className='col-6 action-left-container'>
+                    <AttendanceAction />
+                    {
+                        userData.attendanceAction === 'webClockIn' ?  <div className='mt-3'>Start time: {dailyLogs?.length > 0 ? dailyLogs[0] : '--:--'}</div> :<></>
+                    }
+                   
+                </div>
+                <div className='col-6 action-right-container'>
+
+                    {
+                        userData.attendanceAction === 'webClockIn' ? <>
                             {
                                 !issLoggedIn ? <button
                                     className='btn btn-primary'
@@ -38,7 +48,6 @@ function Actions() {
                                         className='btn btn-primary'
                                         onClick={handleClockIn}>Web Clock-out</button>
                             }
-
                             <div className='d-block mt-3'>
                                 <div className='text-secondary'>
                                     Shift: General
@@ -47,10 +56,22 @@ function Actions() {
                             </div>
                             <div className='mt-2'>End time: {dailyLogs?.length > 1 ? dailyLogs[dailyLogs.length - 1] : '--:--'}</div>
                             <ToastContainer />
-                        </div>
-                    </div>
-    </div>
-  )
+                        </> : <button className='btn btn-outline-info mt-2' onClick={handleNavigate}>Go to Timesheet</button>
+                    }
+                    {/* {
+                        !issLoggedIn ? <button
+                            className='btn btn-primary'
+                            onClick={handleClockIn}>Web Clock-in</button> :
+                            <button
+                                className='btn btn-primary'
+                                onClick={handleClockIn}>Web Clock-out</button>
+                    } */}
+
+
+                </div>
+            </div>
+        </div>
+    )
 }
 
 export default Actions
