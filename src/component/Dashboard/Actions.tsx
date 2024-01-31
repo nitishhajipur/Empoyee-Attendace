@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import AttendanceAction from './AttendanceAction'
 import moment from 'moment'
@@ -11,7 +11,7 @@ function Actions() {
     const [dailyLogs, setDailyLogs] = useState<any>([])
     const [userData]: any = useOutletContext();
     const navigate = useNavigate()
-
+    let attendaceSession: any = []
 
     const handleClockIn = () => {
         issLoggedIn ? setIssLoggedIn(false) : setIssLoggedIn(true)
@@ -20,10 +20,19 @@ function Actions() {
         const timeStamp = new Date().getTime();
         const time = moment(timeStamp).format("hh:mm:ss");
         dailyLogs.push(time)
-        console.log('18....', dailyLogs)
-
     }
-    const handleNavigate = ()=>{
+
+    useEffect(() => {
+        dailyLogs.map((item: any, index: any) => {
+            if (index % 2 === 0) {
+                const session = dailyLogs.slice(index, index + 2)
+                attendaceSession.push(session)
+            }
+        })
+        console.log('18....', dailyLogs, attendaceSession)
+    }, [dailyLogs, attendaceSession])
+
+    const handleNavigate = () => {
         navigate('/timesheet')
     }
     return (
@@ -32,9 +41,9 @@ function Actions() {
                 <div className='col-6 action-left-container'>
                     <AttendanceAction />
                     {
-                        userData.attendanceAction === 'webClockIn' ?  <div className='mt-3'>Start time: {dailyLogs?.length > 0 ? dailyLogs[0] : '--:--'}</div> :<></>
+                        userData.attendanceAction === 'webClockIn' ? <div className='mt-3'>Start time: {dailyLogs?.length > 0 ? dailyLogs[0] : '--:--'}</div> : <></>
                     }
-                   
+
                 </div>
                 <div className='col-6 action-right-container'>
 

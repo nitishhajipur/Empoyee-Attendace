@@ -11,9 +11,10 @@ import './App.scss';
 import Calender from './component/Dashboard/Calender';
 import Employee from './component/Dashboard/Employee';
 import Project from './component/Dashboard/Project';
-import Timesheet from './component/Dashboard/Timesheet';
+// import Timesheet from './component/Dashboard/Timesheet/Timesheet';
 import SighnIn from './component/Dashboard/appauthentication/SighnIn';
 import { ToastContainer, toast } from 'react-toastify';
+import TimeSheet from './component/Dashboard/Timesheet/Timesheet';
 
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route path='/home' element={<Dashboard />} />
           <Route path='/calender' element={<Calender />} />
-          <Route path='/timesheet' element={<Timesheet />} />
+          <Route path='/timesheet' element={<TimeSheet />} />
           <Route path='/payslips' element={<Project />} />
 
           <Route path="*" element={<NoPage />} />
