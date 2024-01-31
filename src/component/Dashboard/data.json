@@ -1,0 +1,142 @@
+{
+    "userId": 4,
+    "logDetails": [
+      {
+        "date": "24/1/2024",
+        "monthIndex": 0,
+        "logs": [
+          {
+            "logInTime": "09:00:45",
+            "logOutTime": "07:00:00",
+            "breakTime": "1:00:00",
+            "grossTime": "10:00:00",
+            "effectiveHours": "9:00:00"
+          }
+        ],
+        "status": "saved",
+        "sheetId": null,
+        "sheetSumittedOn": "null",
+        "sheetApprovedOn": "null",
+        "sheetUpadetedBy": "null"
+      },
+      {
+        "date": "23/1/2024",
+        "monthIndex": 0,
+        "logs": [
+          {
+            "logInTime": "09:30:04",
+            "logOutTime": "06:00:00",
+            "breakTime": "00:00:30",
+            "grossTime": "8:30:05",
+            "effectiveHours": "8:00:00"
+          }
+        ],
+        "status": "saved",
+        "sheetId": null,
+        "sheetSumittedOn": "",
+        "sheetApprovedOn": "",
+        "sheetUpadetedBy": ""
+      },
+      {
+        "date": "22/1/2024",
+        "monthIndex": 1,
+        "logs": [
+          {
+            "logInTime": "10:30:10",
+            "logOutTime": "08:00:00",
+            "breakTime": "00:00:30",
+            "grossTime": "09:30:34",
+            "effectiveHours": "9:00:00"
+          }
+        ],
+        "status": "saved",
+        "sheetId": null,
+        "sheetSumittedOn": "null",
+        "sheetApprovedOn": "null",
+        "sheetUpadetedBy": "null"
+      },
+      {
+        "date": "21/1/2024",
+        "monthIndex": 0,
+        "logs": [
+          {
+            "logInTime": "09:30:21",
+            "logOutTime": "07:00:00",
+            "breakTime": "01:30:12",
+            "grossTime": "09:30:24",
+            "effectiveHours": "8:00:00"
+          }
+        ],
+        "status": "accepted",
+        "sheetId": 1,
+        "sheetSumittedOn": "22/1/2024",
+        "sheetApprovedOn": "23/1/2024",
+        "sheetUpadetedBy": "shanker"
+      },
+      {
+        "date": "20/1/2024",
+        "monthIndex": 0,
+        "logs": [
+          {
+            "logInTime": "10:00:20",
+            "logOutTime": "07:00:00",
+            "breakTime": "01:30:12",
+            "grossTime": "09:00:00",
+            "effectiveHours": "07:30"
+          }
+        ],
+        "status": "accepted",
+        "sheetId": 1,
+        "sheetSumittedOn": "22/1/2024",
+        "sheetApprovedOn": "23/1/2024",
+        "sheetUpadetedBy": "shanker"
+      },
+      {
+        "date": "19/1/2024",
+        "monthIndex": 0,
+        "logs": [
+          {
+            "logInTime": "10:00:01",
+            "logOutTime": "07:00:00",
+            "breakTime": "00:00:30",
+            "grossTime": "09:00:00",
+            "effectiveHours": "08:30:09"
+          }
+        ],
+        "status": "rejected",
+        "sheetId": 2,
+        "sheetSumittedOn": "22/1/2024",
+        "sheetApprovedOn": "null",
+        "sheetUpadetedBy": "adminakshay"
+      },
+      {
+        "date": "18/1/2024",
+        "monthIndex": 1,
+        "logs": [
+          {
+            "logInTime": "09:00:05",
+            "logOutTime": "06:00:00",
+            "breakTime": "00:00:30",
+            "grossTime": "09:00:00",
+            "effectiveHours": "08:30:01"
+          }
+        ],
+        "status": "rejected",
+        "sheetId": 2,
+        "sheetSumittedOn": "22/1/2024",
+        "sheetApprovedOn": "null",
+        "sheetUpadetedBy": "adminakshay"
+      }
+    ],
+    "commentsDetails": [
+      {
+        "sheetID": "2",
+        "comment": [
+          {
+            "admin": "not specified withdetails Provided",
+            "user": "provided the asked data"
+          }
+        ]
+      }
+    ]
+  }
