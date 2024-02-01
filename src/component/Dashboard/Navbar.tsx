@@ -34,14 +34,14 @@ const Layout = () => {
                     <div className={pathname == '/calender' ? 'selected-nav' : 'nav-item'}>
                         <NavLink to="/calender" className='nav-link'>Calender</NavLink>
                     </div>
-                    <div className={pathname == '/project' ? 'selected-nav' : 'nav-item'}>
-                        <NavLink to="/project" className='nav-link'>Payslip</NavLink>
+                    <div className={`disablelink ${(pathname == '/project') ?'selected-nav' : 'nav-item'}` }>
+                        <NavLink to="/project" className='nav-link' onClick={(e)=>{e.preventDefault()}}>Payslip</NavLink>
                     </div>
-                    <div className={pathname == '/employee' ? 'selected-nav' : 'nav-item'}>
-                        <NavLink to="/employee" className='nav-link'>Holidays</NavLink>
+                    <div className={`disablelink ${(pathname == '/employee') ? 'selected-nav' : 'nav-item'}`}>
+                        <NavLink to="/employee" className='nav-link' onClick={(e)=>{e.preventDefault()}}>Holidays</NavLink>
                     </div>
-                    <div className={pathname == '/leavesBenifits' ? 'selected-nav' : 'nav-item'}>
-                        <NavLink to="/leavesBenifits" className='nav-link'>Leaves & Benifits</NavLink>
+                    <div className={`disablelink ${(pathname == '/leavesBenifits') ? 'selected-nav' : 'nav-item'}`}>
+                        <NavLink to="/leavesBenifits" className='nav-link' onClick={(e)=>{e.preventDefault()}}>Leaves & Benifits</NavLink>
                     </div>
                 </div>
             </nav>

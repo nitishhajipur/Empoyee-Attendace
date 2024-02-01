@@ -62,16 +62,17 @@ import { Column } from 'primereact/column';
 import EditNoteIcon from '@mui/icons-material/EditNote';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
+import ApprovalStatusOfSheets from './ApprovalStatusOfSheets';
 
 function Overview() {
     const data: any = [
-        { id: 1, startTime: '9:00', endTime: '6:00', effectiveHour: '8hr', grossHour: '9hr', overTime: '2hr' },
-        { id: 2, startTime: '9:00', endTime: '6:00', effectiveHour: '8hr', grossHour: '9hr', overTime: '1hr' },
-        { id: 3, startTime: '9:00', endTime: '20:00', effectiveHour: '8hr', grossHour: '9hr', overTime: '5hr' },
-        { id: 4, startTime: '9:00', endTime: '6:00', effectiveHour: '8hr', grossHour: '9hr', overTime: '1hr' },
-        { id: 5, startTime: '9:00', endTime: '6:00', effectiveHour: '8hr', grossHour: '9hr', overTime: '3hr' },
-        { id: 6, startTime: '9:00', endTime: '6:00', effectiveHour: '8hr', grossHour: '9hr', overTime: '4hr' },
-        { id: 7, startTime: '9:00', endTime: '6:00', effectiveHour: '8hr', grossHour: '9hr', overTime: '1hr' },
+        { id: 1, startTime: '9:00', endTime: '6:00', effectiveHour: '8hr',breakTime:"1:00", grossHour: '9hr', overTime: '2hr' },
+        { id: 2, startTime: '9:00', endTime: '7:00', effectiveHour: '9:30hr', breakTime:"0:30",grossHour: '10:00hr', overTime: '1hr' },
+        { id: 3, startTime: '9:00', endTime: '20:00', effectiveHour: '7:30hr',breakTime:"1:30", grossHour: '9hr', overTime: '5hr' },
+        { id: 4, startTime: '9:00', endTime: '8:00', effectiveHour: '10hr',breakTime:"2:00", grossHour: '11hr', overTime: '1hr' },
+        { id: 5, startTime: '10:00', endTime: '7:00', effectiveHour: '8:30hr',breakTime:"0:30", grossHour: '9hr', overTime: '3hr' },
+        { id: 6, startTime: '9:00', endTime: '6:00', effectiveHour: '8hr',breakTime:"1:00", grossHour: '9hr', overTime: '4hr' },
+        { id: 7, startTime: '10:00', endTime: '8:00', effectiveHour: '8hr',breakTime:"2:00", grossHour: '10hr', overTime: '1hr' },
 
     ]
     const [weekData, setWeekData] = React.useState<any>([]);
@@ -112,17 +113,18 @@ function Overview() {
         <div>
             <div className='d-flex justify-content-between'>
                 <h6 className='m-2'>Weekly report</h6>
-                <button className='btn btn-outline-primary me-4'>Approval status</button>
+                <ApprovalStatusOfSheets/>
             </div>
             <hr />
             <DataTable value={weekData} tableStyle={{ minWidth: '50rem' }}>
                 <Column field='date' header="Date" frozen alignFrozen="right"></Column>
                 <Column field="startTime" header="Start time"></Column>
                 <Column field="endTime" header="End time"></Column>
+                <Column field="breakTime" header="Break time"></Column>
                 <Column field="effectiveHour" header="Effective hour"></Column>
                 <Column field="grossHour" header="Gross hour"></Column>
                 <Column field="overTime" header="Over time"></Column>
-                <Column body={actionBodyTemplate} header="Action"></Column>
+                {/* <Column body={actionBodyTemplate} header="Action"></Column> */}
 
             </DataTable>
         </div>
