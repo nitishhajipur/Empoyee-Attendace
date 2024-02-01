@@ -40,6 +40,20 @@
     border-bottom: 1px solid lightcoral;
     margin-left: 1em;
   }
+  .disablelink{
+    width: 100% !important;
+    padding: 1em;
+    margin-left: 1em;
+    // background-color: ;
+    color: grey;
+    cursor: not-allowed;
+    border-radius: 10px;
+    // margin-top: 1em;
+  }
+  .disablelink a{
+    cursor: not-allowed;
+  }
+
   .nav-item:hover{
     background-color: rgb(235, 235, 235);
     /* color: lightblue; */
