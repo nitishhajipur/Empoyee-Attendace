@@ -72,7 +72,7 @@ function TimeSheet() {
   }
 
   const calculateDiff=(rowData:any,rowIndex:number)=>{
-    let logDetails:any=[...data]
+    let logDetails:any=[...data?.logDetails]
     let logData=logDetails[rowIndex].logs[0]
     if(logData?.logInTime && logData?.logOutTime){
       let startTime=moment(logData?.logInTime, 'HH:mm:ss')

@@ -62,7 +62,7 @@ const SighnIn = () => {
                                         </div>
                                         <div>
                                             <button type='submit' className='login'> Sign in</button>
-                                            <button type='button' className='sighnUp'> Sign up</button>
+                                            {/* <button type='button' className='sighnUp'> Sign up</button> */}
 
                                         </div>
 
