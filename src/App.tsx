@@ -15,6 +15,7 @@ import Project from './component/Dashboard/Project';
 import SighnIn from './component/Dashboard/appauthentication/SighnIn';
 import { ToastContainer, toast } from 'react-toastify';
 import TimeSheet from './component/Dashboard/Timesheet/Timesheet';
+import SheetsTabs from './component/Dashboard/Timesheet/TabsComponents';
 
 
 function App() {
@@ -26,7 +27,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route path='/home' element={<Dashboard />} />
           <Route path='/calender' element={<Calender />} />
-          <Route path='/timesheet' element={<TimeSheet />} />
+          <Route path='/timesheet' element={<SheetsTabs />} />
           <Route path='/payslips' element={<Project />} />
 
           <Route path="*" element={<NoPage />} />

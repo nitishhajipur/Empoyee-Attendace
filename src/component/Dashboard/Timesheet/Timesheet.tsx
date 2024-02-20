@@ -11,14 +11,19 @@ import CancelIcon from '@mui/icons-material/Cancel';
 import MonthsTab from './MonthsTab';
 import dataa from '../data.json';
 import { InputSwitch } from 'primereact/inputswitch';
+import moment from 'moment';
 
 function TimeSheet() {
 
   // const [weekData, setWeekData] = React.useState<any>([]);
   const [selectedProducts, setSelectedProducts] = useState(null);
   const [rowClick, setRowClick] = useState(true);
+  const [data,setData]=useState<any>(null)
+  useEffect(()=>{
+    setData(dataa)
+
+  },[])
   // let weekday: any = []
-  console.log('json', dataa)
   // useEffect(() => {
   //   const today = new Date();
   //   let _day: any = today.getDay();
@@ -57,15 +62,38 @@ function TimeSheet() {
     </>
 
   }
-  const startTimeTemplate = (rowData: any) => {
+
+  const timeFieldChangeChangeHandler=(field:any,rowIndex:any,value:any)=>{
+      let logDetails=data.logDetails[rowIndex].logs[0]
+      logDetails[`${field}`]=value
+      setData(data)
+      console.log(data)
+     
+  }
+
+  const calculateDiff=(rowData:any,rowIndex:number)=>{
+    let logDetails:any=[...data?.logDetails]
+    let logData=logDetails[rowIndex].logs[0]
+    if(logData?.logInTime && logData?.logOutTime){
+      let startTime=moment(logData?.logInTime, 'HH:mm:ss')
+      let endTime=moment(logData?.logOutTime,'HH:mm:ss')
+      let gorssHours=moment.utc(moment(endTime,"HH:mm:ss").diff(moment(startTime,"HH:mm:ss"))).format("HH:mm:ss")
+      logData.grossTime=gorssHours.toString()
+      console.log(data,logDetails,"81.....")
+      setData(data)
+    }
+
+
+  }
+  const startTimeTemplate = (rowData: any,props:any) => {
     console.log('68....', rowData)
     return <div style={{ width: '1rem !important' }}>
-      <input type="time" className='form-control' value={rowData.logs[0].logInTime} />
+      <input type="time" className='form-control' value={rowData.logs[0].logInTime} onChange={(e:any)=>{timeFieldChangeChangeHandler("logInTime",props?.rowIndex,e.target.value)}} onBlur={(e:any)=>{calculateDiff(rowData,props.rowIndex)}}/>
     </div>
   }
-  const endTimeTemplate = (rowData: any) => {
+  const endTimeTemplate = (rowData: any,props:any) => {
     return <div>
-      <input type="time" className='form-control' value={rowData.logs[0].logOutTime} />
+      <input type="time" className='form-control' value={rowData.logs[0].logOutTime} onChange={(e:any)=>{timeFieldChangeChangeHandler("logOutTime",props?.rowIndex,e.target.value)}} onBlur={(e:any)=>{calculateDiff(rowData,props.rowIndex)}}/>
     </div>
   }
   const effectiveTimeTemplate = (rowData: any) => {
@@ -78,7 +106,7 @@ function TimeSheet() {
       <input type="text" className='form-control w-100' value={rowData.logs[0].grossTime} disabled />
     </div>
   }
-  const overTimeTemplate = (rowData: any) => {
+  const breakTimeTemplate = (rowData: any) => {
     return <div>
       <input type="text" className='form-control w-100 ' value={rowData.logs[0].breakTime} disabled />
     </div>
@@ -96,7 +124,7 @@ function TimeSheet() {
       </div>
       {/* <hr /> */}
       <DataTable
-        value={dataa.logDetails}
+        value={data?.logDetails}
         tableStyle={{ minWidth: '50rem' }}
         selection={selectedProducts && selectedProducts}
         onSelectionChange={(e: any) => {
@@ -109,9 +137,9 @@ function TimeSheet() {
         <Column field='date' header="Date" frozen alignFrozen="right" ></Column>
         <Column body={startTimeTemplate} header="Start time" style={{ width: '14em' }} ></Column>
         <Column body={endTimeTemplate} header="End time" style={{ width: '14em' }}></Column>
+        <Column body={breakTimeTemplate} header="Over time" style={{ width: '14em' }}></Column>
         <Column body={effectiveTimeTemplate} header="Effective hour" style={{ width: '14em' }}></Column>
         <Column body={grossTimeTemplate} header="Gross hour" style={{ width: '14em' }}></Column>
-        <Column body={overTimeTemplate} header="Over time" style={{ width: '14em' }}></Column>
         <Column body={actionBodyTemplate} header="Action" style={{ width: '14em' }}></Column>
       </DataTable>
       <div className='m-2 d-flex justify-content-end'>

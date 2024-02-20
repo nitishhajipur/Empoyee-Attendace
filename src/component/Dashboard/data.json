@@ -6,10 +6,10 @@
         "monthIndex": 0,
         "logs": [
           {
-            "logInTime": "09:00:45",
-            "logOutTime": "07:00:00",
+            "logInTime": null,
+            "logOutTime": null,
             "breakTime": "1:00:00",
-            "grossTime": "10:00:00",
+            "grossTime": "",
             "effectiveHours": "9:00:00"
           }
         ],
@@ -24,10 +24,10 @@
         "monthIndex": 0,
         "logs": [
           {
-            "logInTime": "09:30:04",
-            "logOutTime": "06:00:00",
+            "logInTime": null,
+            "logOutTime": null,
             "breakTime": "00:00:30",
-            "grossTime": "8:30:05",
+            "grossTime": "",
             "effectiveHours": "8:00:00"
           }
         ],
@@ -42,10 +42,10 @@
         "monthIndex": 1,
         "logs": [
           {
-            "logInTime": "10:30:10",
-            "logOutTime": "08:00:00",
+            "logInTime": null,
+            "logOutTime": null,
             "breakTime": "00:00:30",
-            "grossTime": "09:30:34",
+            "grossTime": "",
             "effectiveHours": "9:00:00"
           }
         ],
@@ -60,10 +60,10 @@
         "monthIndex": 0,
         "logs": [
           {
-            "logInTime": "09:30:21",
-            "logOutTime": "07:00:00",
+            "logInTime": null,
+            "logOutTime": null,
             "breakTime": "01:30:12",
-            "grossTime": "09:30:24",
+            "grossTime": "",
             "effectiveHours": "8:00:00"
           }
         ],
@@ -78,10 +78,10 @@
         "monthIndex": 0,
         "logs": [
           {
-            "logInTime": "10:00:20",
-            "logOutTime": "07:00:00",
+            "logInTime": null,
+            "logOutTime": null,
             "breakTime": "01:30:12",
-            "grossTime": "09:00:00",
+            "grossTime": "",
             "effectiveHours": "07:30"
           }
         ],
@@ -96,10 +96,10 @@
         "monthIndex": 0,
         "logs": [
           {
-            "logInTime": "10:00:01",
-            "logOutTime": "07:00:00",
+            "logInTime": null,
+            "logOutTime": null,
             "breakTime": "00:00:30",
-            "grossTime": "09:00:00",
+            "grossTime": "",
             "effectiveHours": "08:30:09"
           }
         ],
@@ -114,10 +114,10 @@
         "monthIndex": 1,
         "logs": [
           {
-            "logInTime": "09:00:05",
-            "logOutTime": "06:00:00",
+            "logInTime": null,
+            "logOutTime": null,
             "breakTime": "00:00:30",
-            "grossTime": "09:00:00",
+            "grossTime": "",
             "effectiveHours": "08:30:01"
           }
         ],
