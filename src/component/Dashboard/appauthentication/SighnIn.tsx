@@ -6,7 +6,10 @@ import { ErrorMessage, Field, Form, Formik } from 'formik'
 import * as Yup from 'yup'
 import { FetchData } from '../../../config/fetch'
 import { toast } from 'react-toastify'
+import { useDispatch } from 'react-redux'
+import { types } from '../../../indexReducer/types'
 const SighnIn = () => {
+    const dispatch=useDispatch()
     const schema = Yup.object().shape({
         userName: Yup.string().required("Please Enter UserName"),
         password: Yup.string().required("Please Enter Password")
@@ -19,7 +22,9 @@ const SighnIn = () => {
             if(response.data.status == 'error'){
                 toast.error(response.data.message)
             }else{
-                navigate('/home')
+                // navigate('/home')
+                dispatch({type:types.APP_AUTHENTICATION,payload:true})
+
                 sessionStorage.setItem('id',response.data.id)
             }
         })

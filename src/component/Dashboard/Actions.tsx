@@ -9,7 +9,7 @@ function Actions() {
     const [issLoggedIn, setIssLoggedIn] = useState(false)
     const [toastMsg, setToastMsg] = useState('Login successful');
     const [dailyLogs, setDailyLogs] = useState<any>([])
-    const [userData]: any = useOutletContext();
+    // const [userData]: any = useOutletContext();
     const navigate = useNavigate()
     let attendaceSession: any = []
 
@@ -40,14 +40,14 @@ function Actions() {
             <div className='row flex-nowrap'>
                 <div className='col-6 action-left-container'>
                     <AttendanceAction />
-                    {
+                    {/* {
                         userData.attendanceAction === 'webClockIn' ? <div className='mt-3'>Start time: {dailyLogs?.length > 0 ? dailyLogs[0] : '--:--'}</div> : <></>
-                    }
+                    } */}
 
                 </div>
                 <div className='col-6 action-right-container'>
 
-                    {
+                    {/* {
                         userData.attendanceAction === 'webClockIn' ? <>
                             {
                                 !issLoggedIn ? <button
@@ -66,7 +66,7 @@ function Actions() {
                             <div className='mt-2'>End time: {dailyLogs?.length > 1 ? dailyLogs[dailyLogs.length - 1] : '--:--'}</div>
                             <ToastContainer />
                         </> : <button className='btn btn-outline-info mt-2' onClick={handleNavigate}>Go to Timesheet</button>
-                    }
+                    } */}
                     {/* {
                         !issLoggedIn ? <button
                             className='btn btn-primary'

@@ -10,9 +10,9 @@ import { useOutletContext } from "react-router-dom";
 
 function Dashboard() {
 
-    const [userData]: any = useOutletContext();
+const [userData]: any = useOutletContext();
 
-    console.log('15.....outlet', userData)
+console.log('15.....outlet', userData)
 
     return (
         <div className='bg-secodary'>

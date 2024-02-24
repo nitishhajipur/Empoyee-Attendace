@@ -1,0 +1,3 @@
+export const types={
+    APP_AUTHENTICATION:"APP_AUTHENTICATION"
+}

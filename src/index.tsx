@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import './index.scss'
+import { Provider } from 'react-redux';
 // import "../node_modules/primereact/resources/themes/saga-blue/theme.css";
 import '../node_modules/primereact/resources/themes/lara-light-indigo/theme.css';
 import '../node_modules/primereact/resources/primereact.css'
@@ -14,12 +15,21 @@ import '../node_modules/primereact/resources/primereact.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Store from './indexReducer/Store';
+import { BrowserRouter } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
+    <Provider store={Store}>
+      <BrowserRouter>
+      <ToastContainer/>
+
     <App />
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
 

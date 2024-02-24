@@ -17,7 +17,7 @@ import { InputSwitch } from 'primereact/inputswitch';
 function Header(props: any) {
     const { setTheme, theme } = props
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-    const { userData }: any = props;
+    // const { userData }: any = props;
 
     const open = Boolean(anchorEl);
     const navigate = useNavigate();
@@ -37,7 +37,7 @@ function Header(props: any) {
         <header>
 
             <div className='d-flex justify-content-between me-5'>
-                <h3 className='text-dark'>Good morning {userData?.firstName?.charAt(0).toUpperCase() + userData?.firstName?.slice(1)}...</h3>
+                {/* <h3 className='text-dark'>Good morning {userData?.firstName?.charAt(0).toUpperCase() + userData?.firstName?.slice(1)}...</h3> */}
                 <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
                     <Tooltip title="Account settings">
                         <IconButton
@@ -48,7 +48,7 @@ function Header(props: any) {
                             aria-haspopup="true"
                             aria-expanded={open ? 'true' : undefined}
                         >
-                            <Avatar sx={{ width: 32, height: 32 }}>{userData?.firstName?.charAt(0).toUpperCase()}</Avatar>
+                            {/* <Avatar sx={{ width: 32, height: 32 }}>{userData?.firstName?.charAt(0).toUpperCase()}</Avatar> */}
                         </IconButton>
                     </Tooltip>
                 </Box>

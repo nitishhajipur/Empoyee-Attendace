@@ -4,7 +4,7 @@ import { useOutletContext } from "react-router-dom";
 
 function Earning() {
     const date = new Date()
-    const [userData]: any = useOutletContext();
+    // const [userData]: any = useOutletContext();
     const [workingDetails, setWorkingDetails] = useState<any>({
         effective: 20 ,
         gross: 39,
@@ -41,7 +41,7 @@ function Earning() {
                         <div className='mt-2'>:</div>
                     </div>
                     <div className='col-5'>
-                        <h5>{userData.hourlyPay}$</h5>
+                        {/* <h5>{userData.hourlyPay}$</h5> */}
                         <span className='text-warning'>{workingDetails.effective} hr</span>
                         <div className='text-success mt-2'>{workingDetails.gross} hr</div>
                         <div className='text-success'>
